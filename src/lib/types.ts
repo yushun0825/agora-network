@@ -28,3 +28,9 @@ export interface SeedCommunity {
   tags: string[];
   relatedCommunities?: string[];
 }
+
+export interface CommunityFilters {
+  query: string;
+  types: CommunityType[];
+  tags: string[];
+}
