@@ -2,8 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { Logo } from "@/components/Logo";
 import { SearchDemo } from "@/components/SearchDemo";
-import { NetworkGraph } from "@/components/NetworkGraph";
-import { getGraph } from "@/lib/seed-data";
+import { SEED_COMMUNITIES } from "@/lib/seed-data";
 
 export const metadata = {
   title: "Preview — 30秒UXデモ",
@@ -12,8 +11,6 @@ export const metadata = {
 };
 
 export default function PreviewPage() {
-  const graph = getGraph();
-
   return (
     <main className="min-h-screen">
       <header className="flex items-center justify-between px-6 sm:px-10 py-6 border-b border-marble-white/10">
@@ -39,13 +36,9 @@ export default function PreviewPage() {
         </h1>
         <p className="text-marble-white/65 max-w-2xl leading-relaxed mb-10 text-[15px]">
           このページは AGORA の検索・発見体験を{" "}
-          <span className="text-marble-white">{graph.nodes.length} 件のシードコミュニティ</span>{" "}
-          で再現したプレビューです。本番では同名異物の自動解決・2次接続検出・説明可能AI推薦が稼働します。
+          <span className="text-marble-white">{SEED_COMMUNITIES.length} 件のシードコミュニティ</span>{" "}
+          で再現したプレビューです。本番では同名異物の自動解決や説明可能AI推薦が稼働します。
         </p>
-
-        <div className="mb-12">
-          <NetworkGraph graph={graph} height={500} />
-        </div>
 
         <div className="mb-3 flex items-baseline justify-between">
           <h2 className="font-serif text-[22px] sm:text-[26px] text-marble-white tracking-tight">
@@ -69,7 +62,8 @@ export default function PreviewPage() {
         <div className="mt-16 pt-8 border-t border-marble-white/10 text-[13px] text-marble-white/55">
           <p>
             このプレビューに登場するコミュニティは、公開情報のみで構成された AGORA のシードです。
-            本番では誰もが Wikipedia 型のオープン編集で追加・修正できます。
+            <strong className="text-marble-white/80">コミュニティ同士の関係（人脈・所属・派生）は、ローンチ後に登録ユーザーが追加していきます。</strong>
+            私たちは関係を勝手にプリシードしません。
           </p>
           <p className="mt-3">
             <Link

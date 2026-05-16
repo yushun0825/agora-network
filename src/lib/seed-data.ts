@@ -14,7 +14,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2020,
     homepage: "https://www.praxisnation.com/",
     tags: ["network-state", "digital-nation", "frontier"],
-    relatedCommunities: ["cabin-dao", "edge-city", "network-school", "balaji-readers"],
   },
   {
     id: "cabin-dao",
@@ -25,7 +24,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     location: "Global (USA HQ)",
     foundedYear: 2021,
     tags: ["network-state", "web3", "real-estate"],
-    relatedCommunities: ["praxis-society", "edge-city"],
   },
   {
     id: "edge-city",
@@ -36,7 +34,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     location: "Pop-up cities globally",
     foundedYear: 2023,
     tags: ["network-state", "pop-up-city"],
-    relatedCommunities: ["praxis-society", "cabin-dao"],
   },
   {
     id: "zuzalu",
@@ -47,7 +44,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     location: "Pop-up (Montenegro 2023)",
     foundedYear: 2023,
     tags: ["network-state", "ethereum", "longevity"],
-    relatedCommunities: ["edge-city"],
   },
   {
     id: "prospera",
@@ -70,7 +66,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     location: "Narashino, Japan",
     foundedYear: 2014,
     tags: ["aerospace", "cubesat", "structural-analysis"],
-    relatedCommunities: ["chiba-tech-aerospace", "isas-jaxa", "open-source-cubesat", "chiba-tech-alumni"],
   },
   {
     id: "chiba-tech-aerospace",
@@ -80,7 +75,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     memberEstimate: 150,
     location: "Narashino, Japan",
     tags: ["aerospace", "education"],
-    relatedCommunities: ["chiba-tech-nakayama-lab", "isas-jaxa", "jaxa", "chiba-tech-alumni", "open-source-cubesat"],
   },
   {
     id: "mit-media-lab",
@@ -124,7 +118,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2018,
     homepage: "https://synspective.com/",
     tags: ["aerospace", "sar", "earth-observation"],
-    relatedCommunities: ["jaxa", "anri-portfolio", "japan-startups"],
   },
   {
     id: "spacex",
@@ -165,7 +158,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     description: "Ethereum エコシステムを支援する非営利組織。",
     foundedYear: 2014,
     tags: ["web3", "blockchain"],
-    relatedCommunities: ["zuzalu"],
   },
   {
     id: "wikimedia-foundation",
@@ -202,7 +194,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     type: "movement",
     description: "老化解明と寿命延伸を目指す国際的研究・実践コミュニティ。",
     tags: ["health", "biotech"],
-    relatedCommunities: ["zuzalu"],
   },
   {
     id: "indie-hackers",
@@ -400,7 +391,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     description: "日本国内でアイアンマンスーツの再現を試みる愛好家コミュニティ。",
     location: "Japan",
     tags: ["cosplay", "marvel", "engineering"],
-    relatedCommunities: ["marvel-fans"],
   },
   {
     id: "amateur-rocketry-jp",
@@ -485,7 +475,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     description: "渋谷を拠点とする日本IT企業・スタートアップ群。",
     location: "Shibuya, Tokyo, Japan",
     tags: ["tech", "japan", "tokyo"],
-    relatedCommunities: ["mercari-engineering", "japan-startups"],
   },
 
   // === 宇宙機関 ===
@@ -499,7 +488,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2003,
     homepage: "https://www.jaxa.jp/",
     tags: ["aerospace", "national-agency", "japan"],
-    relatedCommunities: ["isas-jaxa", "chiba-tech-aerospace", "synspective"],
   },
   {
     id: "isas-jaxa",
@@ -511,7 +499,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 1981,
     homepage: "https://www.isas.jaxa.jp/",
     tags: ["aerospace", "research", "deep-space"],
-    relatedCommunities: ["jaxa", "chiba-tech-nakayama-lab", "chiba-tech-aerospace"],
   },
   {
     id: "nasa",
@@ -523,7 +510,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 1958,
     homepage: "https://www.nasa.gov/",
     tags: ["aerospace", "national-agency"],
-    relatedCommunities: ["spacex", "jaxa"],
   },
   {
     id: "esa",
@@ -535,7 +521,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 1975,
     homepage: "https://www.esa.int/",
     tags: ["aerospace", "national-agency", "europe"],
-    relatedCommunities: ["nasa", "jaxa"],
   },
   {
     id: "open-source-cubesat",
@@ -544,7 +529,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     description: "世界中の大学・研究機関の超小型衛星開発者によるオープンコミュニティ。",
     memberEstimate: 2000,
     tags: ["aerospace", "cubesat", "open-source"],
-    relatedCommunities: ["chiba-tech-nakayama-lab", "isas-jaxa", "chiba-tech-aerospace"],
   },
 
   // === 日本のテック・エンジニアリング ===
@@ -558,7 +542,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2013,
     homepage: "https://engineering.mercari.com/",
     tags: ["tech", "japan", "marketplace"],
-    relatedCommunities: ["shibuya-it-community", "japan-startups"],
   },
   {
     id: "preferred-networks",
@@ -570,7 +553,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2014,
     homepage: "https://www.preferred.jp/",
     tags: ["ai", "deep-learning", "japan"],
-    relatedCommunities: ["anthropic", "japan-startups"],
   },
   {
     id: "tokyo-dev-en",
@@ -582,7 +564,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2015,
     homepage: "https://www.tokyodev.com/",
     tags: ["tech", "japan", "international"],
-    relatedCommunities: ["shibuya-it-community"],
   },
   {
     id: "aws-ug-japan",
@@ -615,7 +596,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     location: "Narashino, Japan",
     foundedYear: 1942,
     tags: ["alumni", "japan", "engineering"],
-    relatedCommunities: ["chiba-tech-aerospace", "chiba-tech-nakayama-lab"],
   },
   {
     id: "kosen-alumni",
@@ -638,7 +618,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2024,
     homepage: "https://ns.com/",
     tags: ["network-state", "education", "frontier"],
-    relatedCommunities: ["praxis-society", "edge-city", "balaji-readers"],
   },
   {
     id: "balaji-readers",
@@ -648,7 +627,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     memberEstimate: 50000,
     foundedYear: 2022,
     tags: ["network-state", "philosophy", "frontier"],
-    relatedCommunities: ["network-school", "praxis-society"],
   },
   {
     id: "naval-followers",
@@ -657,7 +635,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     description: "Naval Ravikant の「Almanack」「How to get rich」を実践する起業家・知的好奇心層。",
     memberEstimate: 2000000,
     tags: ["philosophy", "entrepreneurship"],
-    relatedCommunities: ["balaji-readers", "lex-fridman-podcast-fans"],
   },
 
   // === ファンダム・文化 ===
@@ -678,7 +655,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     memberEstimate: 80000,
     location: "Japan",
     tags: ["cosplay", "maker", "japan"],
-    relatedCommunities: ["japan-iron-man-cosplay", "marvel-fans"],
   },
 
   // === 投資・ファンディング ===
@@ -691,7 +667,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 2012,
     homepage: "https://anri.vc/",
     tags: ["startup", "vc", "japan", "deep-tech"],
-    relatedCommunities: ["synspective", "japan-startups"],
   },
 
   // === スポーツ・実践 ===
@@ -715,7 +690,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     foundedYear: 1991,
     homepage: "https://arxiv.org/",
     tags: ["academic", "open-science", "preprint"],
-    relatedCommunities: ["mit-media-lab", "isas-jaxa"],
   },
 ];
 
@@ -743,68 +717,3 @@ export function allTags(): { tag: string; count: number }[] {
     .sort((a, b) => b.count - a.count);
 }
 
-// relatedCommunities は片方向で書かれているため、双方向の関係を計算する
-export function getRelated(id: string): SeedCommunity[] {
-  const ids = new Set<string>();
-  const target = getById(id);
-  if (target?.relatedCommunities) {
-    target.relatedCommunities.forEach((rid) => ids.add(rid));
-  }
-  for (const c of SEED_COMMUNITIES) {
-    if (c.id === id) continue;
-    if (c.relatedCommunities?.includes(id)) ids.add(c.id);
-  }
-  return Array.from(ids)
-    .map((rid) => getById(rid))
-    .filter((c): c is SeedCommunity => Boolean(c));
-}
-
-// ネットワークグラフ用: 全コミュニティをノード、relatedCommunities を双方向エッジとして返す
-export function getGraph(): {
-  nodes: { id: string; name: string; type: SeedCommunity["type"] }[];
-  links: { source: string; target: string }[];
-} {
-  const nodes = SEED_COMMUNITIES.map((c) => ({ id: c.id, name: c.name, type: c.type }));
-  const seen = new Set<string>();
-  const links: { source: string; target: string }[] = [];
-  for (const c of SEED_COMMUNITIES) {
-    for (const rid of c.relatedCommunities ?? []) {
-      const key = [c.id, rid].sort().join("|");
-      if (seen.has(key)) continue;
-      seen.add(key);
-      if (SEED_COMMUNITIES.some((x) => x.id === rid)) {
-        links.push({ source: c.id, target: rid });
-      }
-    }
-  }
-  return { nodes, links };
-}
-
-// 特定のノードを中心とした半径 depth のサブグラフ
-export function getSubgraph(centerId: string, depth = 1) {
-  const full = getGraph();
-  const adjacency = new Map<string, Set<string>>();
-  for (const l of full.links) {
-    if (!adjacency.has(l.source)) adjacency.set(l.source, new Set());
-    if (!adjacency.has(l.target)) adjacency.set(l.target, new Set());
-    adjacency.get(l.source)!.add(l.target);
-    adjacency.get(l.target)!.add(l.source);
-  }
-  const include = new Set<string>([centerId]);
-  let frontier = new Set<string>([centerId]);
-  for (let d = 0; d < depth; d++) {
-    const next = new Set<string>();
-    for (const id of frontier) {
-      for (const nb of adjacency.get(id) ?? []) {
-        if (!include.has(nb)) next.add(nb);
-        include.add(nb);
-      }
-    }
-    frontier = next;
-  }
-  const nodes = full.nodes.filter((n) => include.has(n.id));
-  const links = full.links.filter(
-    (l) => include.has(l.source) && include.has(l.target),
-  );
-  return { nodes, links };
-}

@@ -26,7 +26,6 @@ export interface SeedCommunity {
   foundedYear?: number;
   homepage?: string;
   tags: string[];
-  relatedCommunities?: string[];
 }
 
 export interface CommunityFilters {

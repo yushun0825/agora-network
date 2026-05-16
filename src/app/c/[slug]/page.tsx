@@ -2,10 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Logo } from "@/components/Logo";
-import { SEED_COMMUNITIES, getById, getRelated, getSubgraph } from "@/lib/seed-data";
-import type { SeedCommunity } from "@/lib/types";
+import { SEED_COMMUNITIES, getById } from "@/lib/seed-data";
 import { TYPE_LABEL } from "@/lib/community-labels";
-import { NetworkGraph } from "@/components/NetworkGraph";
 
 const SITE_URL = process.env.NEXT_PUBLIC_URL ?? "https://agora-network.vercel.app";
 
@@ -44,8 +42,6 @@ export default function CommunityPage({ params }: { params: { slug: string } }) 
   const community = getById(params.slug);
   if (!community) notFound();
 
-  const related = getRelated(community.id);
-  const subgraph = getSubgraph(community.id, 2);
   const shareUrl = `${SITE_URL}/c/${community.id}`;
   const shareText = `${community.name} · AGORA — ${community.description}`;
   const tweetIntent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -133,51 +129,26 @@ export default function CommunityPage({ params }: { params: { slug: string } }) 
           </div>
         </div>
 
-        {subgraph.nodes.length > 1 && (
-          <div className="mb-12">
-            <p className="text-[11px] uppercase tracking-wider text-marble-white/45 mb-4">
-              2 ホップ近傍ネットワーク
-            </p>
-            <NetworkGraph
-              graph={subgraph}
-              height={400}
-              highlightId={community.id}
-              showCaption={false}
-              linkDistance={120}
-              chargeStrength={-180}
-            />
-          </div>
-        )}
-
-        {related.length > 0 && (
-          <div className="mb-12">
-            <p className="text-[11px] uppercase tracking-wider text-marble-white/45 mb-4">
-              関連コミュニティ
-            </p>
-            <ul className="space-y-2">
-              {related.map((r) => (
-                <li key={r.id}>
-                  <Link
-                    href={`/c/${r.id}`}
-                    className="block group border border-marble-white/10 rounded-md px-4 py-3 hover:border-athena-bronze/40 hover:bg-marble-white/[0.03] transition"
-                  >
-                    <div className="flex items-baseline justify-between gap-3">
-                      <span className="text-[15px] text-marble-white group-hover:text-athena-bronze transition">
-                        {r.name}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-wider text-marble-white/40 flex-shrink-0">
-                        {TYPE_LABEL[r.type]}
-                      </span>
-                    </div>
-                    <p className="text-[12px] text-marble-white/55 mt-1 line-clamp-2">
-                      {r.description}
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {/* 関係（Connection）はユーザーが作るもの。プリシードしない。 */}
+        <div className="mb-12 border border-dashed border-marble-white/15 rounded-md p-6 text-center">
+          <p className="text-[11px] uppercase tracking-wider text-marble-white/45 mb-2">
+            関連コミュニティ
+          </p>
+          <p className="text-[14px] text-marble-white/70 leading-relaxed">
+            関連コミュニティは、まだ誰も登録していません。
+          </p>
+          <p className="text-[13px] text-marble-white/50 leading-relaxed mt-2">
+            AGORA では、コミュニティ間の関係は登録ユーザーが根拠（Evidence）と共に追加します。
+            <br />
+            私たちは関係を勝手に作りません。
+          </p>
+          <Link
+            href="/"
+            className="inline-block mt-4 text-[13px] bg-athena-bronze text-olive-black font-medium rounded-md px-4 py-2 hover:bg-athena-bronze/90 transition"
+          >
+            関係を追加できる権利を請求 →
+          </Link>
+        </div>
 
         <div className="mt-12 pt-8 border-t border-marble-white/10">
           <p className="text-[11px] uppercase tracking-wider text-marble-white/45 mb-3">
