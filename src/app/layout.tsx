@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s · AGORA",
   },
   description:
-    "AGORA collects every community on Earth into one open, Wikipedia-style atlas — and helps you find where you belong. Built by Stark Technologies.",
+    "AGORA collects every community on Earth into one open atlas — and helps you find where you belong. Built by Stark Technologies.",
   keywords: [
     "AGORA",
     "communities",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AGORA — The open database of the world's communities",
     description:
-      "Wikipedia × LinkedIn × the world's diaspora of communities. By Stark Technologies.",
+      "The open atlas of the world's communities. By Stark Technologies.",
     url: SITE_URL,
     siteName: "AGORA",
     images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "AGORA" }],

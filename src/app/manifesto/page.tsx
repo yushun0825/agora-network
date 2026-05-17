@@ -105,8 +105,8 @@ export default function ManifestoPage() {
           <Section id="the-map" title="AGORA は、その問いに答える地図である">
             <P>
               私たちが作っているのは、<strong>世界中のコミュニティのオープン・データベース</strong>である。
-              Wikipedia が「知識」を集合知で地図化したように、
-              AGORA は <strong>「人と関係そのもの」</strong> を集合知で地図化する。
+              人類はかつて「知識」を集合知で地図化することに成功した。
+              AGORA は今、<strong>「人と関係そのもの」</strong> を集合知で地図化する。
             </P>
             <P>
               個々のコミュニティが「一つの居場所」を建てるならば、

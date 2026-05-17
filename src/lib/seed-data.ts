@@ -149,16 +149,6 @@ export const SEED_COMMUNITIES: SeedCommunity[] = [
     tags: ["web3", "blockchain"],
   },
   {
-    id: "wikimedia-foundation",
-    name: "Wikimedia Foundation",
-    type: "professional",
-    description: "Wikipedia をはじめとする自由な知識プロジェクトを運営する非営利組織。",
-    memberEstimate: 700,
-    foundedYear: 2003,
-    homepage: "https://wikimediafoundation.org/",
-    tags: ["open-knowledge", "non-profit"],
-  },
-  {
     id: "rust-foundation",
     name: "Rust Foundation",
     type: "professional",

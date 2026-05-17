@@ -43,7 +43,7 @@ export default function Home() {
 
         <p className="fade-up-delay-2 mt-10 text-balance text-[16px] sm:text-[18px] text-marble-white/75 leading-relaxed max-w-2xl mx-auto">
           AGORA は、世界中のコミュニティと人的紐帯のオープン・データベースです。
-          Wikipedia が知識を集約したように、AGORA は<strong className="text-marble-white">つながりそのもの</strong>を集約します。
+          人類が築いてきた<strong className="text-marble-white">つながりそのもの</strong>を、集合知でひとつの地図に集めます。
           <br className="hidden sm:block" />
           地球上のあらゆるコミュニティを発見し、参加し、構築できる「人類のメタ接続層」になります。
         </p>

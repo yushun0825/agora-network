@@ -155,7 +155,7 @@ export default function CommunityPage({ params }: { params: { slug: string } }) 
             この情報は正しいですか？
           </p>
           <p className="text-[13px] text-marble-white/60 leading-relaxed mb-5">
-            AGORA は誰もが編集できる Wikipedia 型のオープンデータベースを目指しています。
+            AGORA は誰もが編集できるオープン・データベースです。
             ローンチ後は、根拠（Evidence）と共に誰でも更新できるようになります。
           </p>
           <div className="flex flex-wrap gap-3">
