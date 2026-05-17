@@ -5,17 +5,6 @@ import type { SeedCommunity } from "./types";
 export const SEED_COMMUNITIES: SeedCommunity[] = [
   // === デジタル都市国家 / Network States ===
   {
-    id: "praxis-society",
-    name: "PRAXIS Society",
-    type: "digital_nation",
-    description: "インターネット発祥のデジタル都市国家。Dryden Brown 創設（2020）。",
-    memberEstimate: 151000,
-    location: "Online (global)",
-    foundedYear: 2020,
-    homepage: "https://www.praxisnation.com/",
-    tags: ["network-state", "digital-nation", "frontier"],
-  },
-  {
     id: "cabin-dao",
     name: "Cabin DAO",
     type: "digital_nation",

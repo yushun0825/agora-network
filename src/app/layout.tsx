@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     "open database",
     "Stark Technologies",
     "network state",
-    "PRAXIS",
     "human connection",
     "social graph",
   ],

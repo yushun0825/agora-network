@@ -73,9 +73,9 @@ export default function Home() {
         <div className="mt-24 text-[12px] text-marble-white/45 leading-relaxed max-w-xl mx-auto">
           <p className="mb-2 tracking-[0.2em] text-marble-white/60 uppercase">Lineage</p>
           <p>
-            「広場（agora）」と「実践（praxis）」は、古代ギリシャ都市国家の語彙的兄弟。
+            古代ギリシャ都市国家の「広場（agora）」── 市民が集い、議論し、商取引し、出会いを生んだ場所。
             <br />
-            PRAXIS が「一つの新都市国家」を建てるなら、AGORA は <em className="not-italic text-marble-white/70">あらゆる都市国家を結ぶ広場</em> を建てます。
+            私たちはその名を借りて、<em className="not-italic text-marble-white/70">人類のあらゆるコミュニティが交わる広場</em> をインターネット上に建てます。
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ const PILLARS = [
   {
     kicker: "I. Discover",
     title: "あらゆる広場を、ひとつの地図に",
-    body: "PRAXIS、DAO、研究室、地縁団体、ファンダム ── 種類を問わず、世界中のコミュニティを横断的に検索・発見できます。",
+    body: "デジタル都市国家、DAO、研究室、地縁団体、ファンダム ── 種類を問わず、世界中のコミュニティを横断的に検索・発見できます。",
   },
   {
     kicker: "II. Connect",

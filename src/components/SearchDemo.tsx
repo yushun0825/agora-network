@@ -61,7 +61,7 @@ export function SearchDemo() {
           type="text"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="コミュニティ名・タグ・場所で検索 ─ PRAXIS, 中山研, Web3, Tokyo …"
+          placeholder="コミュニティ名・タグ・場所で検索 ─ JAXA, 中山研, Web3, Tokyo …"
           className="w-full bg-marble-white/[0.04] border border-marble-white/15 text-marble-white placeholder:text-marble-white/30 rounded-md px-5 py-4 text-[15px] focus:border-athena-bronze/60 transition"
         />
         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] tracking-widest text-marble-white/30 uppercase">

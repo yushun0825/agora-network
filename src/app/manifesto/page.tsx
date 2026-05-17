@@ -95,7 +95,7 @@ export default function ManifestoPage() {
               むしろ切実になる。
             </P>
             <P>
-              SNSの隆盛、宗教的回帰、PRAXISのようなデジタル都市国家の勃興 ──
+              SNSの隆盛、宗教的回帰、デジタル都市国家の勃興、ファンダムの巨大化 ──
               これらはすべて、その問いへの異なる応答である。
             </P>
           </Section>
@@ -109,8 +109,8 @@ export default function ManifestoPage() {
               AGORA は <strong>「人と関係そのもの」</strong> を集合知で地図化する。
             </P>
             <P>
-              PRAXIS が「一つの新都市国家」を建てるならば、
-              AGORA は「あらゆる新都市国家を結ぶ広場」を建てる。
+              個々のコミュニティが「一つの居場所」を建てるならば、
+              AGORA は「あらゆる居場所が交わる広場」を建てる。
               私たちは個別のコミュニティと競合せず、その上位にメタ層として立つ。
             </P>
           </Section>
