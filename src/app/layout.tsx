@@ -56,6 +56,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="min-h-screen bg-olive-black text-marble-white marble-bg antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-athena-bronze focus:text-olive-black focus:px-4 focus:py-2 focus:rounded-md focus:font-medium"
+        >
+          メインコンテンツへスキップ
+        </a>
         {children}
       </body>
     </html>

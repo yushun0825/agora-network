@@ -31,11 +31,43 @@ html, body {
 }
 
 input, button, textarea, select { font-family: inherit; }
-input:focus, textarea:focus { outline: none; }
 button { cursor: pointer; }
+
+/*
+ * フォーカスリング。
+ * outline:none は a11y 上の禁忌なので使わず、
+ * 全要素で visible focus を bronze ring で統一する。
+ * focus-visible により、マウスクリック時には出ず、キーボード操作時のみ可視化。
+ */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid rgba(184, 152, 112, 0.75); /* athena-bronze/75 */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+input:focus-visible, textarea:focus-visible {
+  outline-offset: 0;
+}
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+
+  /*
+   * 日本語タイトルの改行制御。
+   * word-break: keep-all で漢字・かな連続を一塊として扱い、機械的な文字単位の折り返しを防ぐ。
+   * overflow-wrap: anywhere で、はみ出した場合のフォールバックを確保。
+   * 改行ポイントは <br /> または <wbr /> で明示的に指定する前提。
+   */
+  .balance-ja {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-break: strict;
+  }
+
+  /* kicker 等の英字小キャプションが mobile で折り返さないように */
+  .kicker-tight {
+    white-space: nowrap;
+  }
 }
 
 /* Marble texture overlay */
@@ -43,6 +75,15 @@ button { cursor: pointer; }
   background-image:
     radial-gradient(ellipse 80% 60% at 20% 0%, rgba(42, 63, 111, 0.18) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 80% 100%, rgba(184, 152, 112, 0.08) 0%, transparent 60%);
+}
+
+/* ページ遷移時の控えめなフェードイン */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter {
+  animation: page-enter 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 /* Subtle line that draws in */
@@ -71,3 +112,27 @@ button { cursor: pointer; }
   50% { opacity: 1; transform: scale(1.08); }
 }
 .node-pulse { animation: node-pulse 4s ease-in-out infinite; transform-origin: center; }
+
+/*
+ * Constellation 用の breathing アニメーション。
+ * SVG circle に transform: scale をかけると transform-box: fill-box が必要なため、
+ * 代わりに r 属性的なイメージで opacity を主軸に揺らす（GPU合成可能）。
+ */
+@keyframes node-breath {
+  0%, 100% { opacity: var(--node-base, 0.7); }
+  50%      { opacity: var(--node-peak, 1); }
+}
+
+/*
+ * モーション軽減を設定しているユーザーへの配慮。
+ * fade-up / breathing / draw-in / pulse 等のアニメーションを実質静止状態に置き換える。
+ * AGORA は「ユーザーは商品ではない」原則のもと、誰にとっても安全な体験を提供する。
+ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { ManifestoTOC } from "@/components/ManifestoTOC";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export const metadata = {
   title: "Manifesto",
@@ -20,46 +22,20 @@ const SECTIONS = [
 
 export default function ManifestoPage() {
   return (
-    <main className="min-h-screen">
-      <header className="flex items-center justify-between px-6 sm:px-10 py-6 border-b border-marble-white/10">
-        <Link href="/" className="block">
-          <Logo size={26} />
-        </Link>
-        <nav className="flex items-center gap-5 text-[13px] text-marble-white/70">
-          <Link href="/" className="hover:text-marble-white transition">
-            Home
-          </Link>
-          <Link href="/preview" className="hover:text-marble-white transition">
-            Preview
-          </Link>
-        </nav>
-      </header>
+    <main id="main-content" className="min-h-screen">
+      <Header />
 
-      <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24 grid lg:grid-cols-[auto_1fr] lg:gap-10">
-        {/* Sticky TOC (desktop only) */}
-        <aside className="hidden lg:block sticky top-12 self-start w-44 text-[11px] text-marble-white/45">
-          <p className="uppercase tracking-[0.2em] text-marble-white/30 mb-3">Contents</p>
-          <ol className="space-y-2">
-            {SECTIONS.map((s, i) => (
-              <li key={s.id}>
-                <a
-                  href={`#${s.id}`}
-                  className="block hover:text-marble-white transition leading-snug"
-                >
-                  <span className="text-marble-white/30">{(i + 1).toString().padStart(2, "0")}</span>{" "}
-                  {s.title}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </aside>
+      <div className="max-w-3xl lg:max-w-5xl mx-auto px-6 py-16 sm:py-24 grid lg:grid-cols-[auto_1fr] lg:gap-12">
+        {/* Sticky TOC (desktop only) — scroll-spy 連動 */}
+        <ManifestoTOC sections={SECTIONS} />
 
         <article>
-          <p className="text-[11px] tracking-[0.35em] text-athena-bronze/90 uppercase mb-6">
+          <p className="text-[10px] sm:text-[11px] tracking-[0.28em] sm:tracking-[0.35em] text-athena-bronze/90 uppercase mb-6 kicker-tight">
             AGORA · Manifesto v0
           </p>
-          <h1 className="font-serif text-[44px] sm:text-[56px] leading-[1.1] tracking-tight text-marble-white mb-12 text-balance">
-            人類は土地ではなく、思想と関係で繋がる時代に入った。
+          <h1 className="font-serif text-[26px] sm:text-[36px] md:text-[44px] leading-[1.22] tracking-tight text-marble-white mb-12 balance-ja max-w-[720px]">
+            <span className="block">人類は土地ではなく、</span>
+            <span className="block">思想と関係で繋がる時代に入った。</span>
           </h1>
 
           <Section id="info-shift" title="情報化は完了しつつある">
@@ -132,36 +108,55 @@ export default function ManifestoPage() {
               国家・自治体・大学・企業が一次情報源として参照する。
               国境を越える共同創業・婚姻・市民権取得が、AGORA 経由で日常的に成立する。
             </P>
-            <P>
-              これは <strong>人類のメタ接続層</strong> となる、未踏のインフラである。
-            </P>
+            <blockquote className="my-6 border-l-2 border-athena-bronze pl-5 sm:pl-6 py-2">
+              <p className="font-serif text-[20px] sm:text-[22px] md:text-[24px] text-marble-white leading-snug balance-ja">
+                これは <span className="text-athena-bronze">人類のメタ接続層</span> となる、
+                <br className="hidden sm:block" />
+                未踏のインフラである。
+              </p>
+            </blockquote>
           </Section>
 
           <Divider />
 
           <Section id="join" title="参加するには">
-            <P>
-              AGORA は 2026 年 Q4 にクローズドβを開始し、
-              2026 年 12 月に世界へ公開予定です。
-              最初のコミュニティ登録者 500 名のために招待リストを運営しています。
-            </P>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/"
-                className="inline-block bg-athena-bronze text-olive-black font-medium rounded-md px-5 py-3 text-[14px] tracking-wide hover:bg-athena-bronze/90 transition"
-              >
-                招待リストに登録する →
-              </Link>
-              <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                  "AGORA — 世界中のコミュニティをひとつの地図にする試み。広告ゼロ。データ主権はあなたのもの。",
-                )}&url=${encodeURIComponent(`${SITE_URL}/manifesto`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block border border-marble-white/20 rounded-md px-5 py-3 text-[14px] text-marble-white/80 hover:bg-marble-white/[0.04] hover:text-marble-white transition"
-              >
-                𝕏 で思想を共有
-              </a>
+            <div className="relative mt-2 rounded-lg border border-athena-bronze/30 bg-gradient-to-br from-athena-bronze/[0.06] to-transparent p-6 sm:p-8">
+              <p className="text-[12px] uppercase tracking-[0.25em] text-athena-bronze/85 mb-4">
+                これを最後まで読んだあなたへ
+              </p>
+              <p className="text-[16px] sm:text-[17px] text-marble-white leading-relaxed mb-3 balance-ja">
+                最初の <strong className="text-athena-bronze font-medium">500 名</strong> と一緒に、AGORA の最初のコミュニティ群を地図に描きます。
+              </p>
+              <p className="text-[13px] text-marble-white/65 leading-relaxed mb-6">
+                2026 年 Q4 にクローズド β を開始、12 月に世界へ公開予定。
+                招待リストに登録すると、コミュニティ登録権・編集権・関係追加権が優先的に付与されます。
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/"
+                  className="inline-block bg-athena-bronze text-olive-black font-medium rounded-md px-5 py-3 text-[14px] tracking-wide hover:bg-athena-bronze/90 transition"
+                >
+                  招待リストに登録する →
+                </Link>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    "AGORA — 世界中のコミュニティをひとつの地図にする試み。広告ゼロ。データ主権はあなたのもの。",
+                  )}&url=${encodeURIComponent(`${SITE_URL}/manifesto`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border border-marble-white/20 rounded-md px-5 py-3 text-[14px] text-marble-white/80 hover:bg-marble-white/[0.04] hover:text-marble-white transition"
+                >
+                  𝕏 で思想を広める
+                </a>
+              </div>
+              <div className="mt-5 pt-5 border-t border-marble-white/10">
+                <Link
+                  href="/preview"
+                  className="text-[12px] text-marble-white/55 hover:text-marble-white/85 transition"
+                >
+                  まずは <span className="text-athena-bronze underline underline-offset-2">67 件のシードコミュニティ</span> をプレビューで見る →
+                </Link>
+              </div>
             </div>
           </Section>
 
@@ -171,6 +166,8 @@ export default function ManifestoPage() {
           </div>
         </article>
       </div>
+
+      <Footer />
     </main>
   );
 }
@@ -186,7 +183,7 @@ function Section({
 }) {
   return (
     <section id={id} className="mb-12 scroll-mt-24">
-      <h2 className="group font-serif text-[24px] sm:text-[28px] text-marble-white mb-4 tracking-tight flex items-baseline gap-3">
+      <h2 className="group font-serif text-[24px] sm:text-[28px] text-marble-white mb-4 tracking-tight flex items-baseline gap-3 balance-ja leading-snug">
         <span>{title}</span>
         <a
           href={`#${id}`}

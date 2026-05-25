@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { Logo } from "@/components/Logo";
 import { SearchDemo } from "@/components/SearchDemo";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { SEED_COMMUNITIES } from "@/lib/seed-data";
 
 export const metadata = {
@@ -12,27 +13,16 @@ export const metadata = {
 
 export default function PreviewPage() {
   return (
-    <main className="min-h-screen">
-      <header className="flex items-center justify-between px-6 sm:px-10 py-6 border-b border-marble-white/10">
-        <Link href="/" className="block">
-          <Logo size={26} />
-        </Link>
-        <nav className="flex items-center gap-5 text-[13px] text-marble-white/70">
-          <Link href="/" className="hover:text-marble-white transition">
-            Home
-          </Link>
-          <Link href="/manifesto" className="hover:text-marble-white transition">
-            Manifesto
-          </Link>
-        </nav>
-      </header>
+    <main id="main-content" className="min-h-screen">
+      <Header />
 
       <section className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
-        <p className="text-[11px] tracking-[0.35em] text-athena-bronze/90 uppercase mb-4">
+        <p className="text-[10px] sm:text-[11px] tracking-[0.28em] sm:tracking-[0.35em] text-athena-bronze/90 uppercase mb-4 kicker-tight">
           Preview · 静的デモ
         </p>
-        <h1 className="font-serif text-[34px] sm:text-[44px] tracking-tight text-marble-white mb-4 text-balance">
-          世界中のコミュニティを、検索する。
+        <h1 className="font-serif text-[26px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.22] tracking-tight text-marble-white mb-4 balance-ja">
+          <span className="block">世界中のコミュニティを、</span>
+          <span className="block">検索する。</span>
         </h1>
         <p className="text-marble-white/65 max-w-2xl leading-relaxed mb-10 text-[15px]">
           このページは AGORA の検索・発見体験を{" "}
@@ -41,11 +31,11 @@ export default function PreviewPage() {
         </p>
 
         <div className="mb-3 flex items-baseline justify-between">
-          <h2 className="font-serif text-[22px] sm:text-[26px] text-marble-white tracking-tight">
+          <h2 className="font-serif text-[22px] sm:text-[26px] text-marble-white tracking-tight balance-ja leading-snug">
             検索・絞り込み
           </h2>
           <span className="text-[11px] uppercase tracking-wider text-marble-white/40">
-            Type と Tag で絞り込み可能
+            Type / Tag / 並び順 で絞り込み
           </span>
         </div>
 
@@ -75,6 +65,8 @@ export default function PreviewPage() {
           </p>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

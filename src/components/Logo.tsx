@@ -19,22 +19,35 @@ export function Logo({ size = 32, showWordmark = true, className }: LogoProps) {
           transform={showWordmark ? "translate(20 30)" : "translate(30 30)"}
           fill="none"
           stroke="#F5F4EE"
-          strokeWidth="1.1"
+          strokeWidth="1.3"
           strokeLinecap="round"
         >
-          <circle cx="0" cy="-14" r="1.6" fill="#F5F4EE" stroke="none" />
+          {/* 外周（広場の境界） — 非常に薄く、囲い込みを示唆 */}
+          <circle cx="0" cy="0" r="20" stroke="#F5F4EE" strokeOpacity="0.18" strokeWidth="0.8" />
+
+          {/* スポーク（メタ層が周辺コミュニティを束ねる） */}
+          <line x1="0" y1="-14" x2="0" y2="0" strokeOpacity="0.5" />
+          <line x1="13.06" y1="-7" x2="0" y2="0" strokeOpacity="0.5" />
+          <line x1="13.06" y1="7" x2="0" y2="0" strokeOpacity="0.5" />
+          <line x1="0" y1="14" x2="0" y2="0" strokeOpacity="0.5" />
+          <line x1="-13.06" y1="7" x2="0" y2="0" strokeOpacity="0.5" />
+          <line x1="-13.06" y1="-7" x2="0" y2="0" strokeOpacity="0.5" />
+
+          {/* 周辺間の薄い結び（ノード同士も繋がる「メッシュ」性） */}
+          <line x1="0" y1="-14" x2="13.06" y2="-7" strokeOpacity="0.22" />
+          <line x1="13.06" y1="7" x2="0" y2="14" strokeOpacity="0.22" />
+          <line x1="-13.06" y1="7" x2="-13.06" y2="-7" strokeOpacity="0.22" />
+
+          {/* 外側ノード */}
+          <circle cx="0" cy="-14" r="1.8" fill="#F5F4EE" stroke="none" />
           <circle cx="13.06" cy="-7" r="1.6" fill="#F5F4EE" stroke="none" />
-          <circle cx="13.06" cy="7" r="1.6" fill="#F5F4EE" stroke="none" />
+          <circle cx="13.06" cy="7" r="1.8" fill="#B89870" stroke="none" />
           <circle cx="0" cy="14" r="1.6" fill="#F5F4EE" stroke="none" />
           <circle cx="-13.06" cy="7" r="1.6" fill="#F5F4EE" stroke="none" />
-          <circle cx="-13.06" cy="-7" r="1.6" fill="#F5F4EE" stroke="none" />
-          <circle cx="0" cy="0" r="2.6" fill="#B89870" stroke="none" className="node-pulse" />
-          <line x1="0" y1="-14" x2="0" y2="0" strokeOpacity="0.45" />
-          <line x1="13.06" y1="-7" x2="0" y2="0" strokeOpacity="0.45" />
-          <line x1="13.06" y1="7" x2="0" y2="0" strokeOpacity="0.45" />
-          <line x1="0" y1="14" x2="0" y2="0" strokeOpacity="0.45" />
-          <line x1="-13.06" y1="7" x2="0" y2="0" strokeOpacity="0.45" />
-          <line x1="-13.06" y1="-7" x2="0" y2="0" strokeOpacity="0.45" />
+          <circle cx="-13.06" cy="-7" r="1.8" fill="#B89870" stroke="none" />
+
+          {/* 中心ノード（脈動） */}
+          <circle cx="0" cy="0" r="2.8" fill="#B89870" stroke="none" className="node-pulse" />
         </g>
         {showWordmark && (
           <text
